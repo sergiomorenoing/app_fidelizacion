@@ -8,14 +8,14 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 
 st.set_page_config(page_title="Demo Telco: Fidelización (NPS y Sentimiento)", layout="wide")
-st.title("🌟 Demo IA Telco — Fidelización, Satisfacción y NPS con Análisis de Texto")
+st.title(" Demo IA Telco — Fidelización, Satisfacción y NPS con Análisis de Texto")
 
 st.markdown("""
 Este dashboard muestra cómo la **Inteligencia Artificial (NLP y Deep Learning)** puede revolucionar la gestión de fidelización, permitiendo comprender la voz del cliente, analizar el NPS, predecir riesgo de churn y extraer automáticamente temas de interés a partir de comentarios abiertos.
 """)
 
 # ---------- 1. Simulación de Datos con Historial NPS y Sentimiento ----------
-with st.expander("1️⃣ ¿Cómo se crean los datos? (Simulación realista)"):
+with st.expander("1️ ¿Cómo se crean los datos? (Simulación realista)"):
     st.info("""
     Se simulan registros de clientes con:
     - Comentarios abiertos
@@ -96,7 +96,7 @@ for i, cid in enumerate(clientes_id):
 data_trend = pd.DataFrame(data_trend)
 
 # ---------- 2. Análisis de Sentimiento ----------
-with st.expander("2️⃣ Análisis de sentimiento con Deep Learning (simulado BERT/distilBERT)"):
+with st.expander("2️ Análisis de sentimiento con Deep Learning (simulado BERT/distilBERT)"):
     st.info("""
     Se simula la aplicación de un modelo de sentimiento tipo BERT, altamente preciso para analizar comentarios en español y detectar si el cliente está satisfecho, insatisfecho o neutral.
     """)
@@ -113,7 +113,7 @@ with st.expander("2️⃣ Análisis de sentimiento con Deep Learning (simulado B
     """)
 
 # ---------- 3. Nube de Palabras Interactiva ----------
-with st.expander("3️⃣ Nube de palabras de términos frecuentes"):
+with st.expander("3️ Nube de palabras de términos frecuentes"):
     st.info("""
     Visualiza las palabras que más mencionan los clientes en sus comentarios (mayor tamaño = más frecuencia).
     """)
@@ -135,7 +135,7 @@ with st.expander("3️⃣ Nube de palabras de términos frecuentes"):
     """)
 
 # ---------- 4. Relación NPS y Churn Predicho ----------
-with st.expander("4️⃣ ¿Cómo se relacionan NPS y churn?"):
+with st.expander("4️ ¿Cómo se relacionan NPS y churn?"):
     st.info("""
     Los clientes con NPS bajo tienen mayor probabilidad de abandono (churn).  
     Aquí se visualiza cómo se relaciona la satisfacción declarada con el riesgo de perder al cliente.
@@ -152,7 +152,7 @@ with st.expander("4️⃣ ¿Cómo se relacionan NPS y churn?"):
     """)
 
 # ---------- 5. Tendencia histórica de NPS y Sentimiento ----------
-with st.expander("5️⃣ Tendencia histórica animada de NPS y sentimiento"):
+with st.expander("5️ Tendencia histórica animada de NPS y sentimiento"):
     st.info("""
     Analiza la evolución mensual del NPS y del sentimiento global, ideal para mostrar impacto de acciones de fidelización.
     """)
@@ -167,7 +167,7 @@ with st.expander("5️⃣ Tendencia histórica animada de NPS y sentimiento"):
     st.plotly_chart(fig_sent_trend, use_container_width=True)
 
 # ---------- 6. BONUS: Extracción de Temas (Topic Modeling Simulado) ----------
-with st.expander("6️⃣ ¿De qué hablan los clientes? (Extracción automática de temas)"):
+with st.expander("6️ ¿De qué hablan los clientes? (Extracción automática de temas)"):
     st.info("""
     Simulación de topic modeling: la IA agrupa los comentarios en temas frecuentes usando embeddings y clustering.
     """)
@@ -188,7 +188,7 @@ with st.expander("6️⃣ ¿De qué hablan los clientes? (Extracción automátic
     """)
 
 # ---------- 7. Clustering visual de clientes ----------
-with st.expander("7️⃣ Segmentación y clustering visual de clientes"):
+with st.expander("7️ Segmentación y clustering visual de clientes"):
     st.info("""
     La IA puede segmentar clientes según su perfil de satisfacción y riesgo, facilitando estrategias de retención personalizadas.
     """)
@@ -213,7 +213,7 @@ with st.expander("7️⃣ Segmentación y clustering visual de clientes"):
     """)
 
 # ---------- 8. Detalle Individual (Exploración Interactiva) ----------
-with st.expander("8️⃣ Explora comentarios individuales y su análisis IA"):
+with st.expander("8️ Explora comentarios individuales y su análisis IA"):
     st.info("Puedes seleccionar un cliente al azar y ver el análisis detallado que hace la IA.")
     idx = st.slider("Selecciona el cliente (índice)", 0, N-1, 0)
     fila = data.iloc[idx]
@@ -227,7 +227,7 @@ with st.expander("8️⃣ Explora comentarios individuales y su análisis IA"):
     """)
 
 # ---------- 9. Exporta los datos del dashboard ----------
-with st.expander("9️⃣ Descarga los datos simulados del dashboard"):
+with st.expander("9️ Descarga los datos simulados del dashboard"):
     st.info("Descarga todos los registros simulados para análisis adicional o benchmarking.")
     csv = data.to_csv(index=False).encode('utf-8')
     st.download_button(
